@@ -34,6 +34,67 @@ function submitInfo() {
     var telefone = document.getElementById("telefone").value;
     showMessage("Nome: " + nome + "\nE-mail: " + email + "\nTelefone: " + telefone);
 
+//Vericar se tem contato cadastrado
+var Verificar = {
+    "url": "https://somarcasctg.digisac.app/api/v1/contacts?where[data][number]=&telefone&",
+    "method": "GET",
+    "headers": {
+        "Authorization": "Bearer 5f549bfdd71ddbe1eab5640ce6c897764284cdaa",
+        "Content-Type": "application/json"
+    }
+};
+
+// Function to handle the response
+function handleResponse(response) {
+    if (!response || response.length === 0) {
+        // If the response is empty, execute the cadastrarcontato step
+        var cadastrarcontato = {
+            "url": "https://somarcasctg.digisac.app/api/v1/contacts",
+            "method": "POST",
+            "headers": {
+                "Authorization": "Bearer 5f549bfdd71ddbe1eab5640ce6c897764284cdaa",
+                "Content-Type": "application/json"
+            },
+            "body": JSON.stringify({
+                "internalName": nome,
+                "number": telefone,
+                "serviceId": "f49b7105-2799-4b93-aaa2-73da0f8c59b5",
+                "note": datadodianoformato,
+                "defaultDepartmentId": "9d76e703-bf88-4c17-bfeb-0f2de8f99e80",
+                "tagIds": [
+                    "6790bd44-53b5-4253-878d-64c0ca509d26"
+                ]
+            })
+        };
+
+        // Execute the POST request
+        fetch(cadastrarcontato.url, {
+            method: cadastrarcontato.method,
+            headers: cadastrarcontato.headers,
+            body: cadastrarcontato.body
+        })
+        .then(response => response.json())
+        .then(data => console.log('Contact created:', data))
+        .catch(error => console.error('Error:', error));
+    } else {
+        console.log('Contact already exists:', response);
+    }
+}
+
+// Execute the GET request
+fetch(Verificar.url, {
+    method: Verificar.method,
+    headers: Verificar.headers
+})
+.then(response => response.json())
+.then(data => handleResponse(data))
+.catch(error => console.error('Error:', error));
+
+//Cadastrar contato
+
+
+
+    
     var HTTP = {
         "url": "https://somarcasctg.digisac.app/api/v1/messages",
         "method": "POST",
