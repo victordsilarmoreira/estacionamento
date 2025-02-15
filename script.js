@@ -120,12 +120,6 @@ function submitInfo() {
             .then(data => handleResponse(data))
             .catch(error => console.error('Erro:', error));
     }
-        
-
-
-
-
-
     var HTTP = {
         "url": "https://somarcasctg.digisac.app/api/v1/messages",
         "method": "POST",
@@ -135,17 +129,25 @@ function submitInfo() {
         },
         "body": JSON.stringify({
             "type": "chat",
-            "number": telefone,
+            "contactId": contatoId,
             "serviceId": "167e93b2-23ce-4615-836a-fc019ad79549",
             "dontOpenTicket": "true",
-            "hsmId": "b5b72295-ff4d-43f5-a9d0-8d068a0dc040",
+            "hsmId": "15e6ad1e-d019-4474-9749-d6b280ead614",
             "files": [],
             "uploadingFiles": false,
             "replyTo": null,
-            "components": [{
-                "type": "body",
-                "parameters": []
-            }]
+            "parameters": [
+                {
+                    "type": "body",
+                    "parameters": [
+                        {
+                            "type": "text",
+                            "text": nome
+                        }
+                    ]
+                }
+            ],
+            "fileTemplate": {}
         })
     };
 
