@@ -1,6 +1,8 @@
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh; /* Garante que o body ocupe toda a altura da tela */
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -23,16 +25,16 @@ body {
     align-items: flex-start;
 }
 
-    .form-box label {
-        margin-bottom: 5px;
-    }
+.form-box label {
+    margin-bottom: 5px;
+}
 
-    .form-box input {
-        margin-bottom: 15px;
-        width: 100%;
-        padding: 8px;
-        box-sizing: border-box;
-    }
+.form-box input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
 
 .message-box {
     position: fixed;
@@ -55,20 +57,9 @@ body {
         padding: 15px;
     }
 
-        .form-box input {
-            padding: 10px;
-        }
-}
-
-    width: 100%;  /* Garante que os elementos ocupem toda a largura disponível */
-    box-sizing: border-box;  /* Inclui padding e border na largura total */
-    margin-bottom: 10px;
-}
-
-.form-box input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #000;
+    .form-box input {
+        padding: 10px;
+    }
 }
 
 .form-box button {
