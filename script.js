@@ -86,8 +86,9 @@ function submitInfo() {
                     .catch(error => console.error('Erro:', error));
             } else {
                 showMessage("Contato já cadastrado.");
+                var contatoId = response[0].id;
                 var editarcontact = {
-                    "url": "https://somarcasctg.digisac.app/api/v1/contacts",
+                    "url": `https://somarcasctg.digisac.app/api/v1/contacts/${contatoId}`,
                     "method": "PUT",
                     "headers": {
                         "Authorization": "Bearer 5f549bfdd71ddbe1eab5640ce6c897764284cdaa",
