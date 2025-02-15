@@ -24,7 +24,7 @@ function submitLogin() {
         document.getElementById("loginForm").style.display = "none";
         document.getElementById("infoForm").style.display = "block";
     } else {
-        showMessage("Login ou senha incorretos.");
+        showMessage("Login ou senha incorreto");
     }
 }
 
