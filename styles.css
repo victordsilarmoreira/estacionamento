@@ -33,7 +33,7 @@ body {
 .form-box input {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #000;
+    border: 2px solid #000;
 }
 
 .form-box button {
