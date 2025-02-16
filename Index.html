@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        .header img {
+            width: 300px; /* Dobrar o tamanho original de 150px */
+            height: auto; /* Mantém a proporção da imagem */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .form-box {
+            width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            margin-top: 200px;
+        }
+
+            .form-box label {
+                display: block;
+                margin-top: 10px;
+            }
+
+            .form-box input {
+                width: 100%;
+                padding: 5px;
+                margin-top: 5px;
+            }
+
+            .form-box button {
+                width: 100%;
+                padding: 5px;
+                margin-top: 10px;
+                background-color: #000;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+            }
+
+        .message-box {
+            width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            margin-top: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://github.com/victordsilarmoreira/estacionamento/blob/Victor/SO%20MARCAS%20CONTAGEM%20-%20LOGO%20OFICIAL%20(1).png">
+        </div>
+
+        <form id="loginForm" class="form-box">
+            <label for="login">Login:</label>
+            <input type="text" id="login" name="login"><br>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha"><br>
+            <button type="button" onclick="submitLogin()">Enviar</button>
+        </form>
+
+        <form id="infoForm" class="form-box" style="display:none;">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"><br>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email"><br>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" maxlength="15" oninput="mascararTelefone(this)"><br>
+            <button type="button" onclick="submitInfo()">Enviar</button>
+        </form>
+
+        <div id="messageBox" class="message-box" style="display:none;"></div>
+    </div>
+</body>
+</html>
