@@ -110,7 +110,7 @@ function verificarECadastrarOuAtualizarContato(nome, telefone, email) {
                     "number": phone,
                     "serviceId": "167e93b2-23ce-4615-836a-fc019ad79549",
                     "note": dataAtual,
-                    "defaultDepartmentId": "9d76e703-bf88-4c17-bfeb-0f2de8f99e80",
+                    "defaultDepartmentId": "bd07bed1-bb0a-4721-87c6-cbaca5d1a514",
                     "tagIds": [
                         "6790bd44-53b5-4253-878d-64c0ca509d26"
                     ],
